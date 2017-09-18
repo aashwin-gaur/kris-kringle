@@ -1,16 +1,14 @@
 # kris-kringle
 
-# initialise
+### Initialise
 
 run `gradlew` in home directory 
  OR
 ` gradle clean eclipse` 
 
-#Run
+### Run
 
 `gradle bootRun`
-
-OR 
-
+OR
 Run as java application from your favourite IDE
 

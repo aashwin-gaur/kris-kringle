@@ -32,4 +32,7 @@ dependencies {
 	testCompile('org.springframework.security:spring-security-test')
 
 	runtime('com.h2database:h2')
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.6'
+	compile group: 'org.apache.commons', name: 'commons-text', version: '1.1'
+	
 }
