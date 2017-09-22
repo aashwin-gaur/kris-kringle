@@ -4,6 +4,7 @@ import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.UUID;
 
 import org.apache.commons.text.RandomStringGenerator;
 import org.junit.Ignore;
@@ -16,6 +17,10 @@ public class RandomGenerator {
 	public static String generatePartyCode(int length) {
 		RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').build();
 		return generator.generate(length);
+	}
+	
+	public static String generatePartyCodeUuid() {
+		return UUID.randomUUID().toString();
 	}
 
 	//TODO: This is O(n2) make it O(n) ////////////////////

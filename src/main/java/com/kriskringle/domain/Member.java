@@ -1,5 +1,6 @@
 package com.kriskringle.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,8 +17,10 @@ public class Member {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+	
 	private String name;
-    @ManyToOne
+	
+    @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "party_code")
 	private Party party;
 	
