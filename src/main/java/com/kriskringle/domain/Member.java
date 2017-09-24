@@ -21,7 +21,7 @@ public class Member {
 	private String name;
 	
     @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "party_code")
+    @JoinColumn(name = "party",referencedColumnName="partyCode")
 	private Party party;
 	
 }
