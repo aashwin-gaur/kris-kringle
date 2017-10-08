@@ -12,25 +12,16 @@ spring:
     profiles:
         active: dev
     datasource:
-            dataSourceClassName: org.h2.jdbcx.JdbcDataSource
-            url: jdbc:h2:file:C:\aashwin\dev\git\kris-kringle\KK_DB;DB_CLOSE_DELAY=-1
-            databaseName:
-            serverName:
-            username:
-            password:
+            url: jdbc:mysql://localhost:3306/kriskringledb?useSSL=false
+            databaseName: kriskringledb
+            username: springuser
+            password: password
     jpa:
-        database-platform: org.hibernate.dialect.H2Dialect
-        database: H2
-        openInView: false
+        database-platform: org.hibernate.dialect.MySQL5Dialect
         show_sql: true
         generate-ddl: true
         hibernate:
-            ddl-auto: create-drop
-            naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+            ddl-auto: update
         properties:
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: false               
-    h2:
-        console:
-            enabled: true
-            path: /h2
