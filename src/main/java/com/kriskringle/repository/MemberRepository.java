@@ -8,4 +8,6 @@ import com.kriskringle.domain.Member;
 @Repository
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
+	public Member findByUsername(String username);
+	
 }

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.kriskringle.domain.Member;
 import com.kriskringle.domain.Party;
 import com.kriskringle.exception.InvalidDateException;
 import com.kriskringle.helper.PartyResponse;
@@ -39,6 +40,11 @@ public class KrisKringleService {
 		Party party = PartyUtils.createParty(date);
 		partyRepository.save(party);
 		return PartyResponse.wrap(party);
+	}
+	
+	@Transactional
+	public Member getMember(Long id) {
+		return memberRepository.findOne(id);
 	}
 	
 	public List<PartyResponse.Wrapper> getAllParties(){
